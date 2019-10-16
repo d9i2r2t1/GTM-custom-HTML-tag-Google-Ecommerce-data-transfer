@@ -1,4 +1,4 @@
-# Универсальный скрипт динамического ремаркетинга для Google Tag Manager
+# Custom HTML tag for Google Tag Manager: GA Ecommerce data transfer to remarketing pixels
 
 ## Описание
 
