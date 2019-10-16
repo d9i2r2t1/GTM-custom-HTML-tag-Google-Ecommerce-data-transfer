@@ -1,11 +1,11 @@
 <script>
-//универсальный скрипт динамического ремаркетинга для google tag manager
-//v1.0
+//GA Ecommerce data transfer to remarketing pixels
+//v1.01
 //
-//данный код необходимо установить в google tag manager с помощью custom html тега и с триггером all pages
+//Данный код необходимо установить в Google Tag Manager с помощью Custom HTML тега и с триггером All Pages
 //
-//подробная документация: https://docs.google.com/document/d/1cRU32MFgOHXAZrG_POxjufgtPdnx1qX90mrmM_lOers
-//разработчик: Олег Денисов | facebook.com/oleg.dirtrider
+//Документация на русском: https://clck.ru/JXgHF
+//Разработчик: facebook.com/oleg.dirtrider
 
 (function(){
     //необходимо заполнить объект настроек своими данными
@@ -556,7 +556,7 @@
                 return categoryId;
             },
 
-            //метод получения строки 'a;b;c' наименований товаров, с проверкой на уникальность наименования
+            //метод получения строки 'a,b,c' наименований товаров, с проверкой на уникальность наименования
             getContentNameString: function(ecommEventProducts){
                 debug.log_start.call(this, 'products.getContentNameString');
                 var contentName = '';
@@ -564,7 +564,7 @@
                 for (var i = 0; i < ecommEventProducts.length; i++){
                     if (check.indexOf(ecommEventProducts[i].name) === -1){
                         check.push(ecommEventProducts[i].name);
-                        contentName += ';' + ecommEventProducts[i].name;
+                        contentName += ',' + ecommEventProducts[i].name;
                     }
                 }
                 contentName = contentName.slice(1);
@@ -806,7 +806,7 @@
 </script>
 
 
-<!--отработка пикселей ремаркетинга при отключенном js у пользователя-->
+<!--Отработка пикселей ремаркетинга при отключенном js у пользователя-->
 <noscript>
     <img src="https://vk.com/rtrg?p=ID_ПИКСЕЛЯ_ВКОНТАКТЕ" style="position:fixed; left:-999px;" alt=""/>
     <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=ID_ПИКСЕЛЯ_FACEBOOK&ev=PageView&noscript=1"/>
