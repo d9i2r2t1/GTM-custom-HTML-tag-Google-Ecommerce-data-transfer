@@ -1,4 +1,4 @@
-<script>
+//<script>
 // Custom HTML Tag for Google Tag Manager
 // Google Enhanced Ecommerce data transfer to remarketing pixels
 // v.1.0
@@ -71,7 +71,7 @@
         // If the page type is passed from the site to a GTM variable, you can use it to determine the page type
         useGTMvarPageType: false,
         // GTM page type variable name
-        pageTypeGTM: {{varDL_pageType}},
+        pageTypeGTM: '{{varDL_pageType}}',
         // GTM page type variable value(s) for site pages
         pageTypeGTMnames: {
             // GTM page type variable value for the home page of the site
@@ -93,7 +93,7 @@
         // Site search query URL parameter
         siteSearchQueryParam: 'query',
         
-        siteSearchPage: settings.useGTMvarPageType ? settings.pageTypeGTMnames.siteSearch : settings.siteSearch,
+        siteSearchPage: this.useGTMvarPageType ? this.pageTypeGTMnames.siteSearch : this.siteSearch,
         
         // Debug Mode logs different messages to the console during tag running
         // Don't forget to disable Debug Mode before publishing the container to the site!
@@ -873,7 +873,8 @@
                             if (!main[pixel].eventsEcomm.hasOwnProperty(ecommEventName)) {
                                 eventCheckedObj[pixel] = false;
                             }
-                            else if (ecommEventName === 'checkout' && parseInt(ecommEventObj.actionField.step, 10) !== 1) {
+                            else if (ecommEventName === 'checkout' && ecommEventObj.hasOwnProperty('actionField') && 
+                                    ecommEventObj.actionField.hasOwnProperty('step') && parseInt(ecommEventObj.actionField.step, 10) !== 1) {
                                 eventCheckedObj[pixel] = false;
                             }
                             else if (main[pixel].hasOwnProperty('eventCheck') && !main[pixel].eventCheck(ecommEventName, ecommEventObj)) {
@@ -1160,4 +1161,4 @@
     // Run
     window.gaEcomTransfer(settings);
 })();
-</script>
+//</script>
