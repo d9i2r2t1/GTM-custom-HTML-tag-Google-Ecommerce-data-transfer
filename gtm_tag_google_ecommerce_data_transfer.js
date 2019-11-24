@@ -1,4 +1,4 @@
-//<script>
+<script>
 // Custom HTML Tag for Google Tag Manager
 // Google Enhanced Ecommerce data transfer to remarketing pixels
 // v.1.01
@@ -71,7 +71,7 @@
         // If the page type is passed from the site to a GTM variable, you can use it to determine the page type
         useGTMvarPageType: false,
         // GTM page type variable name
-        pageTypeGTM: '{{varDL_pageType}}',
+        pageTypeGTM: {{varDL_pageType}},
         // GTM page type variable value(s) for site pages
         pageTypeGTMnames: {
             // GTM page type variable value for the home page of the site
@@ -1161,4 +1161,4 @@
     // Run
     window.gaEcomTransfer(settings);
 })();
-//</script>
+</script>
