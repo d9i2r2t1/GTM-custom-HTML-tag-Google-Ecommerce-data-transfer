@@ -1,7 +1,7 @@
 //<script>
 // Custom HTML Tag for Google Tag Manager
 // Google Enhanced Ecommerce data transfer to remarketing pixels
-// v.1.0
+// v.1.01
 //
 // Available pixels:
 // VK (https://vk.com)
