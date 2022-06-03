@@ -1008,7 +1008,7 @@
                     }
                 }
                 for (var i = 0;  i < dataLayer.length; i++) {
-                    if (!dataLayer[i].hasOwnProperty('ecommerce')) {
+                    if (!dataLayer[i].hasOwnProperty('ecommerce') || dataLayer[i].ecommerce === null) {
                         debug.log.call(this, 'There is no ecommerce in dataLayer event');
                         continue;
                     }
@@ -1055,11 +1055,11 @@
                     debug.log.call(main, 'DataLayer.push was intercepted');
                     originalPush.apply(this, arguments);
                     debug.log.call(main, 'Original dataLayer.push has been sent');
-                    if (!arguments[0].hasOwnProperty('ecommerce')) {
+                    if (!arguments[0].hasOwnProperty('ecommerce') || dataLayer[i].ecommerce === null) {
                         debug.log.call(main, 'No ecommerce events were found in the intercepted dataLayer.push');
                         return;
                     } 
-                    else if (arguments[0].ecommerce !== null) {
+                    else {
                         main.otherStart(arguments[0]);
                     }
                 };
