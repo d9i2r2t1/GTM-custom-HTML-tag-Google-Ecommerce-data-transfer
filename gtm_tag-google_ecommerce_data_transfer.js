@@ -1055,7 +1055,7 @@
                     debug.log.call(main, 'DataLayer.push was intercepted');
                     originalPush.apply(this, arguments);
                     debug.log.call(main, 'Original dataLayer.push has been sent');
-                    if (!arguments[0].hasOwnProperty('ecommerce') || dataLayer[i].ecommerce === null) {
+                    if (!arguments[0].hasOwnProperty('ecommerce') || arguments[0].ecommerce === null) {
                         debug.log.call(main, 'No ecommerce events were found in the intercepted dataLayer.push');
                         return;
                     } 
