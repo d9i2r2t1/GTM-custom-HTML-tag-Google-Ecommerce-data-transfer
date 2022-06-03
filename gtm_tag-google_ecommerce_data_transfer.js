@@ -71,7 +71,7 @@
         // If the page type is passed from the site to a GTM variable, you can use it to determine the page type
         useGTMvarPageType: false,
         // GTM page type variable name
-        pageTypeGTM: "",  // For example: {{varDL_pageType}}
+        pageTypeGTM: "",
         // GTM page type variable value(s) for site pages
         pageTypeGTMnames: {
             // GTM page type variable value for the home page of the site
